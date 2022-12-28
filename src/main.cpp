@@ -170,7 +170,7 @@ void SetOutput(int value)//0-100
   outputTarget = scaled;
 }
 
-//Thread that handles reading from PC uart
+//Thread that handles LED Strip
 void InterfaceMonitorCode( void * pvParameters ){
   for(;;){
  // Call the current pattern function once, updating the 'leds' array
@@ -189,7 +189,7 @@ void InterfaceMonitorCode( void * pvParameters ){
   } 
 }
 
-//Thread/loop that handles generating pulses for swing arm movement.
+//Thread/loop that handles UI and servo control
 void GPIOLoop( void * pvParameters ){
   for(;;){
     lv_timer_handler(); /* let the GUI do its work */
